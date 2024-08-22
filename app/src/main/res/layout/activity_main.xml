@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+<!--    android:background="@drawable/background">-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="610dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_url="https://lottie.host/5b6546b0-2377-429e-9b3e-8decabf3eaea/IigT7jDOOL.json" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-600dp"
+        android:fontFamily="@font/notoserifbalinese_regular"
+        android:foregroundGravity="center"
+        android:text="Guess The Number"
+        android:textColor="#0F4D7E"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/enterTxt"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="Enter your guess"
+        android:inputType="text"
+        android:shadowColor="#0F4D7E"
+        android:textColor="#0F4D7E"
+        android:textColorHighlight="#0F4D7E"
+        android:textColorLink="#0F4D7E"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="-51dp"
+        android:layout_marginRight="20dp"
+        android:text="Enter"
+        android:textColorLink="#92A0C8"
+        android:textSize="16sp"
+        app:rippleColor="#92A0C8"
+        app:strokeColor="#92A0C8" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="320dp"
+        android:text="Start"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/notoserifbalinese_regular"
+        android:text="Press &quot;Start&quot; to start the game"
+        android:textSize="12sp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView2"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="-220dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animation" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="-330dp"
+        app:srcCompat="@drawable/chatbox" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="260dp"
+        android:layout_height="92dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-250dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="260dp"
+        android:layout_height="92dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-91dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-165dp"
+        android:text="hiii"
+        android:textSize="16sp" />
+
+
+</LinearLayout>
