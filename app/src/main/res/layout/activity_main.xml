@@ -74,7 +74,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/notoserifbalinese_regular"
-        android:text="Press &quot;Start&quot; to start the game"
+        android:text="Click &quot;Start&quot; to start the game"
         android:textSize="12sp" />
 
     <com.airbnb.lottie.LottieAnimationView
