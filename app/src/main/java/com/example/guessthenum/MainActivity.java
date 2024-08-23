@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     public void displayHint() {
         Random random = new Random();
         int num;
-            num = random.nextInt(2) + 1;
+        num = random.nextInt(2) + 1;
         if (attempts>=1 && attempts<4) {
             switch (num) {
                 case 1:
@@ -117,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if(attempts==4){
-                char firstchar = Integer.toString(val).charAt(0);
-                txt5.setText("Hint: First digit of number is " + firstchar);
+            char firstchar = Integer.toString(val).charAt(0);
+            txt5.setText("Hint: First digit of number is " + firstchar);
         }
     }
 }
