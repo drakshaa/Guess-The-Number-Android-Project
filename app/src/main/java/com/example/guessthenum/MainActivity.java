@@ -16,11 +16,13 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txt1, txt2, txt3, txt4;
+    TextView txt1, txt2, txt3, txt4, txt5;
     EditText guess;
     Button btn1, btn2;
     int val;
     int attempts;
+    String userinput;
+    int guessnum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
         txt2 = findViewById(R.id.textView3);
         txt3 = findViewById(R.id.textView4);
         txt4 = findViewById(R.id.textView2);
+        txt5 = findViewById(R.id.textView5);
         guess = findViewById(R.id.enterTxt);
         btn1 = findViewById(R.id.button2);
         btn2 = findViewById(R.id.button);
+
         txt3.setText(" Hey! This is Draksha." +
                 "\n\n Click 'Start' to play the game. \n Have fun !!");
 
@@ -51,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 val = random.nextInt(100) + 1;
                 guess.setText("");
                 txt3.setText(" ");
-                txt3.setText("Enter your guess.");
+                txt3.setText("Enter your guess. \n\n Total Attempts: 5");
                 attempts = 0;
             }
         });
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkGuess();
+                displayHint();
             }
         });
     }
@@ -67,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
     public void checkGuess() {
         txt3.setText(" ");
         try {
-            String userinput = guess.getText().toString();
+            userinput = guess.getText().toString();
             attempts++;
 
             if (!userinput.isEmpty()) {
-                int guessnum = Integer.parseInt(userinput);
+                guessnum = Integer.parseInt(userinput);
                 if (guessnum == val) {
-                    txt4.setText("Your guess is correct!! \n\n click 'start' to play again.");
+                    txt4.setText("Your guess is correct!! \n\n Click 'start' to play again.");
                 } else if (attempts < 5) {
                     guess.setText("");
                     txt4.setText(" Incorrect guess!! \n Try Again. \n\n Attempts left: " + (5 - attempts));
@@ -86,5 +91,34 @@ public class MainActivity extends AppCompatActivity {
         } catch (NumberFormatException e) {
             txt4.setText(" Invalid input. \n Please enter a number.");
         }
+    }
+
+
+    public void displayHint() {
+        Random random = new Random();
+        int num;
+            num = random.nextInt(2) + 1;
+        if (attempts>=1 && attempts<4) {
+            switch (num) {
+                case 1:
+                    if (val > guessnum) {
+                        txt5.setText("Hint: Your guess is low.");
+                    } else {
+                        txt5.setText("Hint: Your guess is high.");
+                    }
+                    break;
+                case 2:
+                    if (val % 2 == 0) {
+                        txt5.setText("Hint: Number is even.");
+                    } else {
+                        txt5.setText("Hint: Number is odd.");
+                    }
+                    break;
+            }
+        }
+        if(attempts==4){
+                char firstchar = Integer.toString(val).charAt(0);
+                txt5.setText("Hint: First digit of number is " + firstchar);
         }
     }
+}

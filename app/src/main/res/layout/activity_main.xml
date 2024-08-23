@@ -119,10 +119,10 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_gravity="left"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="-165dp"
-        android:text="hiii"
-        android:textSize="16sp" />
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="-170dp"
+        android:textColor="#8691B3"
+        android:textSize="14sp" />
 
 
 </LinearLayout>
