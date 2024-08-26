@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 val = random.nextInt(100) + 1;
                 guess.setText("");
                 txt3.setText(" ");
+                txt4.setText(" ");
                 txt3.setText("Enter your guess. \n\n Total Attempts: 5");
                 attempts = 0;
             }
@@ -95,30 +96,32 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void displayHint() {
-        Random random = new Random();
-        int num;
-        num = random.nextInt(2) + 1;
-        if (attempts>=1 && attempts<4) {
-            switch (num) {
-                case 1:
-                    if (val > guessnum) {
-                        txt5.setText("Hint: Your guess is low.");
-                    } else {
-                        txt5.setText("Hint: Your guess is high.");
-                    }
-                    break;
-                case 2:
-                    if (val % 2 == 0) {
-                        txt5.setText("Hint: Number is even.");
-                    } else {
-                        txt5.setText("Hint: Number is odd.");
-                    }
-                    break;
+        if (!userinput.isEmpty()){
+            Random random = new Random();
+            int num;
+            num = random.nextInt(2) + 1;
+            if (attempts>=1 && attempts<4) {
+                switch (num) {
+                    case 1:
+                        if (val > guessnum) {
+                            txt5.setText("Hint: Your guess is low.");
+                        } else {
+                            txt5.setText("Hint: Your guess is high.");
+                        }
+                        break;
+                    case 2:
+                        if (val % 2 == 0) {
+                            txt5.setText("Hint: Number is even.");
+                        } else {
+                            txt5.setText("Hint: Number is odd.");
+                        }
+                        break;
+                }
             }
-        }
-        if(attempts==4){
-            char firstchar = Integer.toString(val).charAt(0);
-            txt5.setText("Hint: First digit of number is " + firstchar);
+            if(attempts==4){
+                char firstchar = Integer.toString(val).charAt(0);
+                txt5.setText("Hint: First digit of number is " + firstchar);
+            }
         }
     }
 }
