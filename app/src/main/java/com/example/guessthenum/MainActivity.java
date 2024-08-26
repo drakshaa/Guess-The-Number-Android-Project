@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 guess.setText("");
                 txt3.setText(" ");
                 txt4.setText(" ");
+                txt5.setText(" ");
                 txt3.setText("Enter your guess. \n\n Total Attempts: 5");
                 attempts = 0;
             }
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case 2:
-                        if (val % 2 == 0) {
+                        if (guessnum % 2 != 0) {
                             txt5.setText("Hint: Number is even.");
                         } else {
                             txt5.setText("Hint: Number is odd.");
